@@ -3,9 +3,10 @@
 import { useCallback } from 'react';
 import { Upload, FileText, X, CheckCircle, AlertCircle } from 'lucide-react';
 import { useFileUpload } from '@/hooks/useFileUpload';
+import { UploadResponse } from '@/lib/api';
 
 interface FileUploadProps {
-  onUploadSuccess: (result: any) => void;
+  onUploadSuccess: (result: UploadResponse) => void;
 }
 
 export default function FileUpload({ onUploadSuccess }: FileUploadProps) {
@@ -15,7 +16,7 @@ export default function FileUpload({ onUploadSuccess }: FileUploadProps) {
     try {
       const result = await uploadFile(file);
       onUploadSuccess(result);
-    } catch (err) {
+    } catch {
       // Error is handled by the hook
     }
   }, [uploadFile, onUploadSuccess]);

@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { FileText, Brain, Zap } from 'lucide-react';
 import FileUpload from '@/components/FileUpload';
 import QuestionInterface from '@/components/QuestionInterface';
+import { UploadResponse } from '@/lib/api';
 
 export default function Home() {
   const [hasUploadedFile, setHasUploadedFile] = useState(false);
-  const [uploadResult, setUploadResult] = useState<any>(null);
+  const [uploadResult, setUploadResult] = useState<UploadResponse | null>(null);
 
-  const handleUploadSuccess = (result: any) => {
+  const handleUploadSuccess = (result: UploadResponse) => {
     setUploadResult(result);
     setHasUploadedFile(true);
   };

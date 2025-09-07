@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { api, QuestionResponse, ApiError } from '@/lib/api';
+import { api, ApiError } from '@/lib/api';
 
 export interface QuestionHistory {
   id: string;

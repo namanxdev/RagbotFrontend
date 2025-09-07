@@ -19,7 +19,7 @@ export default function QuestionInterface({ disabled = false }: QuestionInterfac
     try {
       await askQuestion(question.trim());
       setQuestion('');
-    } catch (err) {
+    } catch {
       // Error handled by hook
     }
   };
